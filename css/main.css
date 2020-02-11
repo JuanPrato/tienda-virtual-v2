@@ -560,7 +560,7 @@ textarea {
     }
   }
   
-  @media (min-width: 1320px) {
+  @media (min-width: 1580px) {
     .main_index .productos{
       grid-template-columns: 1fr 1fr 1fr;
       gap: 1rem;
@@ -571,11 +571,22 @@ textarea {
     text-align: center;
     border: 1px solid grey;
     padding: 1rem;
-    max-height: 450px;
-    min-width: 250px;
+
+    min-width: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+  @media (min-width:768px){
+    .productos .producto{
+      max-height: 450px;
+      max-width: 400px;
+    }
+  }
+  @media (min-width:900px){
+    .productos .producto{
+      min-width: 250px;
+    }
   }
 
   .producto .informacion_producto{

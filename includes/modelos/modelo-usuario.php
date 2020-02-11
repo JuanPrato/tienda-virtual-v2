@@ -8,7 +8,10 @@ if($accion === 'registro') {
     // Código para crear los usuarios
     
     // hashear passwords
-    $hash_password = password_hash($password, PASSWORD_DEFAULT);
+    $opciones = array(
+        'cost' => 12
+    );
+    $hash_password = password_hash($password, PASSWORD_BCRYPT, $opciones);
     // importar la conexion
     include '../funciones/bd_conexion.php';
 
@@ -55,7 +58,7 @@ if($accion === 'login') {
         $stmt->fetch();
         if($usuario_nombre){
             //Verifico el password
-            if(password_verify($password,$usuario_passw)){
+            if(password_verify($_POST['password'],$usuario_passw)){
 
                 //Iniciar sesion en una session
                 session_start();

@@ -78,6 +78,7 @@ if($accion === 'login') {
                     'error' => 'Contraseña Incorrecta',
                     'usuario' => $_POST['usuario'],
                     'password' => $_POST['password'],
+                    'password_var' => $password,
                     'tipo' => $accion
                 );
             }

@@ -70,6 +70,9 @@ if($accion === 'login') {
                     'respuesta' => 'exito',
                     'id' => $usuario_id,
                     'nombre'=> $usuario_nombre,
+                    'password' => $_POST['password'],
+                    'password_var' => $password,
+                    'password_db' => $usuario_passw,
                     'tipo' => $accion
                 );
             } else {
@@ -77,9 +80,6 @@ if($accion === 'login') {
                     'respuesta' => 'error',
                     'error' => 'Contraseña Incorrecta',
                     'usuario' => $_POST['usuario'],
-                    'password' => $_POST['password'],
-                    'password_var' => $password,
-                    'password_db' => $usuario_passw,
                     'tipo' => $accion
                 );
             }

@@ -8,10 +8,7 @@ if($accion === 'registro') {
     // Código para crear los usuarios
     
     // hashear passwords
-    $opciones = array(
-        'cost' => 10
-    );
-    $hash_password = password_hash($password, PASSWORD_DEFAULT, $opciones);
+    $hash_password = password_hash($password, PASSWORD_DEFAULT);
     // importar la conexion
     include '../funciones/bd_conexion.php';
 

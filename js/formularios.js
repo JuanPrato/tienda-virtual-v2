@@ -33,12 +33,12 @@ function validarFormulario(e){
                 } else if(respuesta.tipo === 'login'){
                     if(respuesta.respuesta === 'exito'){
                         mostrarNotificacion('exito', 'Logeado exitosamente');
+                      console.log(respuesta);
                         setTimeout(() => {
                            window.location.href = '/';
                         }, 4000);
                     } else {
                         mostrarNotificacion(respuesta.respuesta,respuesta.error);
-                        console.log(respuesta);
                     }
                 }
             } else {

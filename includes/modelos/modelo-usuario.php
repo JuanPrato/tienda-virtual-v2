@@ -9,7 +9,7 @@ if($accion === 'registro') {
     
     // hashear passwords
     $opciones = array(
-        'cost' => 12
+        'cost' => 10
     );
     $hash_password = password_hash($password, PASSWORD_DEFAULT, $opciones);
     // importar la conexion

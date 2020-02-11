@@ -11,7 +11,7 @@ if($accion === 'registro') {
     $opciones = array(
         'cost' => 12
     );
-    $hash_password = password_hash($password, PASSWORD_BCRYPT, $opciones);
+    $hash_password = password_hash($password, PASSWORD_DEFAULT, $opciones);
     // importar la conexion
     include '../funciones/bd_conexion.php';
 

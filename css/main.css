@@ -1,0 +1,1167 @@
+/*! HTML5 Boilerplate v7.3.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+  /** Globales **/
+  html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+      box-sizing: inherit;
+  }
+
+  *{
+    margin: 0;
+    padding: 0;
+  }
+
+  img{
+    width: 100%;
+  }
+  
+  body{
+    font-family: 'Raleway', sans-serif;
+    min-height: 90vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 120px;
+    background-color: var(--claro);
+  }
+
+  .flex{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    flex: 1;
+  }
+
+  :root{
+    --primario: #f39c12;
+    --secundario: #27ae60;
+
+    --primario_oscuro: #d35400;
+    --secundario_oscuro: #1d8b4b;
+
+    --oscuro: #34495e;
+    --claro: #ecf0f1;
+
+    --danger: #e74c3c;
+    --danger_oscuro: #c0392b;
+  }
+  /** Generales **/
+
+  .contenedor{
+    width: 100%;
+    margin-top: 1rem;
+    max-width: 1800px;
+  }
+
+  @media (min-width: 768px) {
+    .contenedor{
+      width: 90%;
+      margin: 0 auto 1rem auto;
+    }
+  }
+  
+  @media(min-width:992px){
+    .contenedor{
+      width: 73%;
+      margin: 0 auto 1rem auto;
+    }
+  }
+
+  .btn{
+    border: none;
+    padding: 1rem 3rem;
+    display: inline-block;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+  }
+
+  .btn:hover{
+    cursor: pointer;
+  }
+
+  @media (min-width: 768px) {
+    .btn{
+      width: initial;
+    }
+  }
+  .btn-primario{
+    background-color: var(--primario);
+  }
+  .btn-primario:hover{
+    background-color: var(--primario_oscuro);
+  }
+  .btn-secundario{
+    background-color: var(--secundario);
+  }
+  .btn-secundario:hover{
+    background-color: var(--secundario_oscuro);
+  }
+  .btn-danger{
+    background-color: var(--danger);
+  }
+
+  .btn-danger:hover{
+    background-color: var(--danger_oscuro);
+  }
+
+  .enlace{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+  .notificacion{
+    padding: 1rem 3rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 1rem;
+    transition: opacity .8s ease-in-out;
+    border-radius: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .notificacion_exito{
+    background-color: #2ecc71;
+  }
+  .notificacion_error{
+    background-color: #e74c3c;
+  }
+  .desvanecer{
+    opacity: 0;
+  }
+  /** titulos y subtitulos **/
+  .titulo_seccion{
+    text-align: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .subtitulo_seccion{
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  @media (min-width: 992px) {
+    .subtitulo_seccion{
+      text-align: left;
+    }
+  }
+
+  /** Alineacion **/
+  .center_text{
+    text-align: center!important;
+  }
+
+  /** Colores **/
+
+  .bg_primario{
+    background-color: var(--primario);
+  }
+
+  .bg_secundario{
+    background-color: var(--secundario);
+  }
+  /** Flex **/
+
+  .flex_grow{
+    flex: 1;
+  }
+
+  .flex_center{
+    justify-content: center;
+  }
+
+  /** Header **/
+  .header{
+    min-height: 5rem;
+    position: relative;
+  }
+  .header.contenedor{
+    margin-top: 0;
+  }
+  .banner{
+    background-image: url(../img/banner.jpg);
+    width: 100%;
+    height: 6rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .logo{
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 2rem;
+
+    text-shadow: 2px 2px black;
+
+  }
+  .logo a span{
+    font-weight: 700;
+  }
+  .logo a{
+    text-decoration: none;
+    color: white;
+  }
+    /* Nav */
+
+  .nav{
+    background-color: #f39c12;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav .icono{
+    min-height: 50px;
+    max-width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav .icono .subtitulo{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+  .nav .icono i{
+    transition: transform .2s ease-in-out;
+  }
+
+  .nav .icono i.rotado {
+    transform: rotate(90deg);
+  }
+
+  .nav .icono i.fa-shopping-cart{
+    font-size: 1.5rem;
+  }
+  
+  .nav .contenedor .enlace{
+    text-decoration: none;
+    color: black;
+  }
+  .links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .links{
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+  }
+
+  .links a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    padding: .7rem;
+    border: 1px solid rgba(0, 0, 0, 0.050);
+  }
+  @media (min-width: 768px) {
+    .links a{
+      border: none;
+      width: 100%;
+      border-right: 1px solid rgba(0, 0, 0, 0.123);
+    }
+    .links a:last-of-type{
+      border:none;
+    }
+
+  }
+  .links a:hover{
+    background-color: #f0b14b;
+    text-shadow: 1px 1px 5px black;
+  }
+
+  .nav .controles-usuario{
+    width: 100%;
+    display: flex;
+    height: auto;
+    justify-content: space-evenly;
+    border-top: 1px solid #a4b0be;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  /** Footer **/
+
+  
+  .footer{
+    display: inline-block;
+    background-color: #2c3e50;
+    max-height: 112px;
+    width: 100%;
+    padding: 2rem 0;
+    margin-top: 1rem;
+    position: absolute;
+    bottom: -120px;
+  }
+
+  .footer .contenedor .links{
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .footer{
+      display: flex;
+      min-height: 6rem;
+      margin: 0 auto;
+    }
+    .footer .contenedor .links{
+      display: flex;
+      width: 50%;
+    }
+  }
+
+  .footer .contenedor .links a:hover{
+    background-color: var(--oscuro);
+  }
+
+  .footer .contenedor{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .footer .contenedor .datos{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-basis: 100%;
+    flex-direction: column;
+  }
+
+  .footer .contenedor .datos span{
+    text-transform: capitalize;
+  }
+
+  .footer .contenedor .datos p{
+    margin: .2rem 0;
+  }
+
+  @media (min-width: 768px) {
+
+    .footer .contenedor .datos{
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+
+  /** CARRITO **/
+
+  @media (min-width: 768px) {
+    .carrito_contenedor{
+      position: relative;
+    }
+  }
+
+  .productos_carrito .producto_carrito{
+    display: flex;
+    border-bottom: 1px solid var(--oscuro);
+    padding: .2rem;
+    justify-content: space-between;
+  }
+
+  .productos_carrito .producto_carrito:last-of-type{
+    border: none;
+  }
+  .productos_carrito{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: var(--primario);
+    border: 1px solid var(--oscuro);
+    padding: 1rem;
+  }
+  @media (min-width: 768px) {
+    .productos_carrito{
+      width: 20rem;
+      left: -10rem;
+      height: fit-content;
+    }
+    
+  }
+
+  .productos_carrito .enlace_carrito{
+    font-weight: 500;
+    padding: .5rem .5rem 0 .5rem;
+    margin-top: .5rem
+  }
+
+
+  /** Pagina principal **/
+
+  @media (min-width: 768px) {
+    .main_index{
+      display: grid;
+      grid-template-columns: 25% auto;
+      gap: 1rem;
+    }
+  }
+
+  /* Filtros */
+
+  .main_index .contenedor-filtros{
+    background-color: #f39c12;
+    min-height: 2rem;
+    padding: 1rem 2rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  @media (min-width: 992px) {
+    .main_index .contenedor-filtros{
+      display: inline-block;
+    }
+  }
+  .contenedor-filtros h3{
+    text-transform: uppercase;
+  }
+
+  .contenedor-filtros .menu-filtros{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  /* mostrador de productos */
+
+  .main_index .productos{
+    background-color: #f39c12;
+    padding: 1rem 2rem;
+    display: grid;
+    grid-template-columns: 100%;
+    gap: .6rem 0;
+  }
+
+  @media (min-width: 768px) {
+    .main_index .productos{
+      grid-template-columns: 50% 50%;
+      gap: 1rem;
+    }
+  }
+  
+  @media (min-width: 1320px) {
+    .main_index .productos{
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+    }
+  }
+
+  .productos .producto{
+    text-align: center;
+    border: 1px solid grey;
+    padding: 1rem;
+    max-height: 450px;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .producto .informacion_producto{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .productos .producto .btn{
+    font-size: .7rem;
+  }
+
+  .productos .producto .precio_categoria{
+    display: flex;
+    justify-content: space-evenly;
+    margin: .2rem 0;
+  }
+  .productos .producto h3{
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  .productos .producto .precio_categoria span{
+    text-transform: uppercase;
+  }
+
+  .productos .producto p span{
+    font-weight: 500;
+  }
+  .productos .producto p span.subtitulo{
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    display: block;
+  }
+  .productos .producto p span.info_especial{
+    font-size: 1.2rem;
+    color: #ecf0f1;
+    font-weight: 700;
+  }
+  .producto .imagen{
+    display: flex;
+    margin: 0 auto;
+    padding: 1rem;
+    max-height: 33%;
+    min-height: 10rem;
+    max-width: 70%;
+    min-width: 10rem;
+  }
+
+
+  /** PAGINAS DE LOGIN Y REGISTRO **/
+
+
+  .main_login_registro{
+    flex: 1;
+    padding: 1rem;
+    background-color: #f39c12;
+  }
+
+  .main_login_registro a{
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+  }
+  .formulario .campo{
+    margin: 1rem 0;
+  }
+  .formulario .campo .label{
+    display: block;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .formulario .campo .input{
+    width: 100%;
+    padding: 1rem .5rem;
+    border: none;
+    margin: .3rem 0;
+  }
+
+  /** PAGINA PRODUCTOS **/
+
+  .main_productos_log_out,
+  .main_productos_log_in{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /** Al no tener permisos **/
+
+  .main_productos_log_out{
+    justify-content: center;
+  }
+
+  /** Productos al tener permisos **/
+
+  .main_productos_log_in h2{
+    margin-bottom: 1rem;
+  }
+
+  .main_productos_log_in table{
+    border-collapse: collapse;
+    padding: 1rem;
+    margin: 0 1rem;
+    display: block;
+    overflow-x: auto;
+  }
+
+  @media (min-width: 768px) {
+    .main_productos_log_in table{
+      display: inline-table;
+    }
+  }
+
+  .columna_descripcion{
+    min-width: 11.9rem;
+  }
+
+  .tbody .fila{
+    margin: 1.6rem 0;
+  }
+
+  .main_productos_log_in table,
+  .tbody .fila .celda{
+    border: 1px solid black;
+    font-weight: 500;
+  }
+
+  thead .fila .titulo_columna {
+    text-transform: uppercase;
+  }
+
+  /* acciones */
+
+  .celda_acciones{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .celda_acciones a{
+    flex: 1;
+    text-align: center;
+    padding: .3rem 0;
+  }
+
+  .celda_acciones a:hover{
+    cursor: pointer;
+  }
+
+  .celda_acciones a .btn_editar{
+    color: var(--secundario);
+  }
+
+  .celda_acciones a .btn_eliminar{
+    color: red;
+  }
+
+  .celda_acciones a:hover,
+  .celda_acciones a:hover{
+    background-color: rgb(0, 0, 0, .1);
+  }
+
+  /** icono de agregar producto **/
+
+  .main_productos_log_in .agregar_producto{
+    margin: 1rem auto;
+  }
+
+  .main_productos_log_in .agregar_producto i{
+    font-size: 2.5rem;
+    color: var(--secundario_oscuro);
+    transition: transform .1s ease-in-out;
+  }
+
+  .main_productos_log_in .agregar_producto i:hover{
+    transform: rotate(45deg);
+  }
+
+
+  /** Modificar/Agregar productos **/
+  .modificar_producto{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    z-index: 3;
+  }
+
+  .contenedor_form{
+    background-color: var(--claro);
+    width: 90%;
+
+    margin: auto;
+    padding: 1rem;
+  }
+  @media (min-width: 768px) {
+    .contenedor_form{
+      width: 70%;
+    }
+  }
+  @media (min-width: 992px) {
+    .contenedor_form{
+      width: 50%;
+    }
+  }
+  .campo{
+    margin: 1rem 0;
+  }
+
+  .campo label{
+    display: block;
+  }
+  .campo input,
+  .campo textarea{
+    padding: .5rem;
+    width: 100%;
+  }
+  .campo .categoria{
+    padding: .5rem;
+  }
+  .campo .textarea_producto{
+    min-height: 5rem;
+    max-height: 5rem;
+  }
+  form .botones input{
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    form .botones input{
+      margin-bottom: 0;
+    }
+    
+    form .botones{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+/** PAGINA DE CONTACTO **/
+
+  .main_contacto{
+    padding: 1rem;
+  }
+
+  .main_contacto .contacto{
+    margin: 1rem 0;
+  }
+
+  @media (min-width: 992px) {
+    .main_contacto .contacto{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+  }
+
+  /** Formulario Contacto **/
+  .fieldset{
+    border-bottom: 1px solid var(--oscuro);
+    padding: 1rem;
+  }
+
+  @media (min-width: 992px) {
+    .fieldset{
+      border: none;
+      border-right: 1px solid var(--oscuro);
+    }
+  }
+  .fieldset legend{
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 500;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .fieldset .campo .label{
+    display: block;
+    margin: 1rem 0 .2rem 0;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .fieldset .campo .input,
+  .fieldset .campo textarea{
+    border: none;
+    border-bottom: 1px solid var(--oscuro);
+    border-radius: 3px;
+    background-color: transparent;
+    transition: background-color .3s ease-out;
+  }
+
+  .fieldset .campo .input{
+    width: 100%;
+    padding: .5rem 1rem;
+  }
+
+  .fieldset .campo textarea{
+    width: 100%;
+    min-height: 15rem;
+    max-height: 15rem;
+    padding: .5rem;
+  }
+
+  .fieldset .campo .input::placeholder,
+  .fieldset .campo textarea::placeholder{
+    color: var(--claro);
+  }
+
+  .input_selected{
+    background-color: var(--claro)!important;
+  }
+
+  .input_selected::placeholder{
+    color: #bdc3c7!important;
+  }
+
+  /** Otras formas de contactar **/
+
+  .contacto_datos{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contacto_datos .informacion{
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .contacto_datos .informacion p{
+    margin: .4rem 0 0 0;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  @media (min-width: 992px) {
+    .contacto_datos .informacion p{
+      text-align: left;
+      font-size: 1rem;
+    }
+  }
+
+  /** PAGINA PRODUCTO ESPECIFICO **/
+
+  .main_producto{
+    background-color: var(--primario);
+    padding: 1rem;
+  }
+
+  .main_producto .producto_especifico{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .producto_especifico .imagen{
+    margin-bottom: 1rem;
+  }
+  @media (min-width: 768px) {
+    .main_producto .producto_especifico{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .producto_especifico .imagen{
+      margin-bottom: 0;
+    }
+  }
+
+  .informacion_contenedor .informacion{
+    display: flex;
+    justify-content: space-between;
+  }
+  .informacion_contenedor .informacion .precio{
+    text-align: center;
+    border-left: 1px solid var(--oscuro);
+    padding-left: .5em;
+  }
+  .informacion_contenedor .informacion p{
+    font-size: 1.3rem;
+  }
+
+  .link{
+    text-decoration: none;
+    color: black;
+  }
+
+
+  /** CHECKOUT **/
+
+  .main_checkout{
+    padding: 1rem;
+  }
+
+  .main_checkout .btn_checkout{
+    margin-top: 1rem;
+  }
+
+  .section_checkout .producto_checkout{
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 1px solid var(--oscuro);
+    padding: 1rem 0;
+  }
+
+  .section_checkout .producto_checkout:last-of-type{
+    border: none;
+  }
+
+  .section_checkout .checkout_total{
+    border-top: 1px solid var(--oscuro);
+    border-bottom: 1px solid var(--oscuro);
+    padding: .5rem;
+    font-weight: 500;
+    font-size: 1.6rem;
+  }
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+  display: none !important;
+}
+
+/*
+* Hide only visually, but have it available for screen readers:
+* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+*
+* 1. For long content, line feeds are not interpreted as spaces and small width
+*    causes content to wrap 1 word per line:
+*    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+*/
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+* Extends the .sr-only class to allow the element
+* to be focusable when navigated to via the keyboard:
+* https://www.drupal.org/node/897638
+*/
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+* Hide visually and from screen readers, but maintain layout
+*/
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+* Clearfix: contain floats
+*
+* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the
+*    `contenteditable` attribute is included anywhere else in the document.
+*    Otherwise it causes space to appear at the top and bottom of elements
+*    that receive the `clearfix` class.
+* 2. The use of `table` rather than `block` is only necessary if using
+*    `:before` to contain the top-margins of child elements.
+*/
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
+     * Printing Tables:
+     * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+

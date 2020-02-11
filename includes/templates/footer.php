@@ -8,10 +8,10 @@
           <p><i class="fas fa-map-marker-alt"></i> <span>Direccion</span> : King Street, Melbourne 5533</p>
         </div>
         <nav class="links">
-          <a href="/proyectosphp/proyecto-tienda-v2/">Inicio</a>
-          <a href="/proyectosphp/proyecto-tienda-v2/productos.php">Productos</a>
+          <a href="/">Inicio</a>
+          <a href="/productos.php">Productos</a>
           <a href="#">Nosotros</a>
-          <a href="/proyectosphp/proyecto-tienda-v2/contacto.php">Contactanos</a>
+          <a href="/contacto.php">Contactanos</a>
         </nav>
       </div>
     </footer>

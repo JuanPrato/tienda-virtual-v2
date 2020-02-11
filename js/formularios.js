@@ -38,6 +38,7 @@ function validarFormulario(e){
                         }, 4000);
                     } else {
                         mostrarNotificacion(respuesta.respuesta,respuesta.error);
+                        console.log(respuesta);
                     }
                 }
             } else {

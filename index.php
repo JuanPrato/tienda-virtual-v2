@@ -46,6 +46,11 @@
                     );
 
                     $productos[] = $producto;
+                                    ?>
+                  <pre>
+                    <?php var_dump($resultado) ?>
+                  </pre>
+                <?php
                 } 
             ?>
 

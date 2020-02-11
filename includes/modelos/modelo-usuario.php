@@ -70,9 +70,6 @@ if($accion === 'login') {
                     'respuesta' => 'exito',
                     'id' => $usuario_id,
                     'nombre'=> $usuario_nombre,
-                    'password' => $_POST['password'],
-                    'password_var' => $password,
-                    'password_db' => $usuario_passw,
                     'tipo' => $accion
                 );
             } else {

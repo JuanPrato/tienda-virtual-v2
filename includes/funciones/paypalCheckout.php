@@ -49,7 +49,7 @@ payment: function(data, actions) {
                     price: <?php echo $producto['precio'] ?>,
                     currency: 'USD'
                 }
-                <?php if( $i !== (count($carrito)-2)){
+                <?php if( $i !== (count($carrito)-1)){
                   ?>,<?php
                 } ?>
         <?php } ?>

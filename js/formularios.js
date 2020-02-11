@@ -27,14 +27,14 @@ function validarFormulario(e){
                 if(respuesta.tipo === 'registro'){
                     mostrarNotificacion('exito', 'Usuario registrado correctamente');
                     setTimeout(() => {
-                        window.location.href = '/proyectosphp/proyecto-tienda-v2/login.php';
+                        window.location.href = '/login.php';
                     }, 5000);
 
                 } else if(respuesta.tipo === 'login'){
                     if(respuesta.respuesta === 'exito'){
                         mostrarNotificacion('exito', 'Logeado exitosamente');
                         setTimeout(() => {
-                           window.location.href = '/proyectosphp/proyecto-tienda-v2/';
+                           window.location.href = '/';
                         }, 4000);
                     } else {
                         mostrarNotificacion(respuesta.respuesta,respuesta.error);

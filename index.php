@@ -46,14 +46,14 @@
                     );
 
                     $productos[] = $producto;
-                                    ?>
+                } 
+            ?>
                   <pre>
                     <?php var_dump($resultado) ?>
                   </pre>
-                <?php
-                } 
-            ?>
-
+                  <pre>
+                    <?php var_dump($productos) ?>
+                  </pre>
             <?php foreach($productos as $llave => $producto): ?>
 
                 <div class="producto <?php echo $producto['id'] ?>">

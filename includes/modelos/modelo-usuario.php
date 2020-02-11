@@ -79,6 +79,7 @@ if($accion === 'login') {
                     'usuario' => $_POST['usuario'],
                     'password' => $_POST['password'],
                     'password_var' => $password,
+                    'password_db' => $usuario_passw,
                     'tipo' => $accion
                 );
             }

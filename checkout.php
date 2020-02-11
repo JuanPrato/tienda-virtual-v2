@@ -1,5 +1,7 @@
 <?php 
 include 'includes/templates/header.php';
+include 'includes/funciones/config.php';
+$total = $_SESSION['carrito']['total'];
 ?>
 
 <main class="main_checkout contenedor bg_primario flex_grow">
@@ -16,14 +18,16 @@ include 'includes/templates/header.php';
                 foreach ($carrito as $producto){ ?> 
                     <?php if($producto['nombre'] != ''): ?>
                             <div class="producto_checkout <?php echo $producto['id'] ?>">
-                                <h4><a class="enlace" href="/proyectosphp/proyecto-tienda-v2/producto.php?id=<?php echo $producto['id'] ?>"><?php echo $producto['nombre'] ?>:</a></h4>
+                                <h4><a class="enlace" href="/producto.php?id=<?php echo $producto['id'] ?>"><?php echo $producto['nombre'] ?>:</a></h4>
                                 <p class="cantidad_checkout"><?php echo $producto['cantidad'] ?></p>
                                 <p class="precio_checkout">$<?php echo $producto['precio'] ?></p>
                             </div><!-- producto_carrito -->
                     <?php endif ?>
                     <?php } ?>
         <!-- Termina parte si tenes items -->
-        <p class="checkout_total">TOTAL: $<?php echo $_SESSION['carrito']['total'] ?></p>
+        <p class="checkout_total">TOTAL: $<?php echo $total ?></p>
+
+        <?php include 'includes/funciones/paypalCheckout.php'; ?>
         <?php endif ?>
     </section>
 </main>
@@ -31,4 +35,3 @@ include 'includes/templates/header.php';
 <?php
 include 'includes/templates/footer.php';
 ?>
-<script>paypal.Buttons().render('.main_checkout');</script>

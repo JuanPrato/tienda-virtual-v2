@@ -76,7 +76,8 @@ if($accion === 'login') {
                 $respuesta = array(
                     'respuesta' => 'error',
                     'error' => 'Contraseña Incorrecta',
-                    'usuario' => $password,
+                    'usuario' => $_POST['usuario'],
+                    'password' => $_POST['password'],
                     'tipo' => $accion
                 );
             }

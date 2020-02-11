@@ -35,7 +35,7 @@ if(isset($_GET['cerrar_sesion'])){
   <header class="header contenedor">
     <div class="banner">
     </div>
-    <div class="logo"><a href="/proyectosphp/proyecto-tienda-v2/">Cosas <span>Random</span></a></div>
+    <div class="logo"><a href="/">Cosas <span>Random</span></a></div>
     <div class="nav">
       <div class="icono contenedor">
         <i class="fas fa-bars fa-2x"></i>
@@ -43,10 +43,10 @@ if(isset($_GET['cerrar_sesion'])){
       </div>
 
       <nav class="links">
-        <a href="/proyectosphp/proyecto-tienda-v2/">Inicio</a>
-        <a href="/proyectosphp/proyecto-tienda-v2/productos.php">Productos</a>
+        <a href="/">Inicio</a>
+        <a href="/productos.php">Productos</a>
         <a href="#">Nosotros</a>
-        <a href="/proyectosphp/proyecto-tienda-v2/contacto.php">Contactanos</a>
+        <a href="/contacto.php">Contactanos</a>
       </nav>
       <div class="controles-usuario">
         <!-- Mostrar para Iniciar Sesion o Controles de Usuario -->
@@ -70,7 +70,7 @@ if(isset($_GET['cerrar_sesion'])){
                             if($producto['nombre'] != ''):
                             ?>
                             <div class="producto_carrito <?php echo $producto['id']; ?>">
-                              <h4><a class="enlace" href="/proyectosphp/proyecto-tienda-v2/producto.php?id=<?php echo $producto['id']; ?>"><?php echo $producto['nombre'] ?>:</a></h4>
+                              <h4><a class="enlace" href="/producto.php?id=<?php echo $producto['id']; ?>"><?php echo $producto['nombre'] ?>:</a></h4>
                               <p class="cantidad_carrito"><?php echo $producto['cantidad'] ?></p>
                               <p class="precio_carrito">$<?php echo $producto['precio'] ?></p>
                             </div><!-- producto_carrito -->
@@ -81,15 +81,15 @@ if(isset($_GET['cerrar_sesion'])){
                         }
                       ?>
                       
-                <a href="/proyectosphp/proyecto-tienda-v2/checkout.php" class="enlace enlace_carrito">Ir al resumen</a>
+                <a href="/checkout.php" class="enlace enlace_carrito">Ir al resumen</a>
             </div><!-- productos_carrito -->
           </div><!-- carrito_contenedor -->
 
           <p class="datos-usuario">Usuario: <?php echo $_SESSION['nombre'] ?></p>
-          <a href="/proyectosphp/proyecto-tienda-v2/login.php?cerrar_sesion=true" class="enlace" id="cerrar_sesion">Cerrar sesion</a>
+          <a href="/login.php?cerrar_sesion=true" class="enlace" id="cerrar_sesion">Cerrar sesion</a>
         <?php else: ?>
-          <a href="/proyectosphp/proyecto-tienda-v2/login.php" class="enlace">Ingresa a tu cuenta</a>
-          <a href="/proyectosphp/proyecto-tienda-v2/signin.php" class="enlace">Registrate ahora mismo</a>
+          <a href="/login.php" class="enlace">Ingresa a tu cuenta</a>
+          <a href="/signin.php" class="enlace">Registrate ahora mismo</a>
 
         <?php endif ?>
 

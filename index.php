@@ -51,13 +51,13 @@
             <?php foreach($productos as $llave => $producto): ?>
 
                 <div class="producto <?php echo $producto['id'] ?>">
-                    <a href="/proyectosphp/proyecto-tienda-v2/producto.php?id=<?php echo $producto['id']; ?>" class="link">
+                    <a href="/producto.php?id=<?php echo $producto['id']; ?>" class="link">
                         <div class="imagen">
                             <img src="img/<?php echo $producto['imagen'] ?>" alt="Imagen producto">
                         </div>
                     </a>
                     <div class="informacion_producto">
-                        <a href="/proyectosphp/proyecto-tienda-v2/producto.php?id=<?php echo $producto['id']; ?>" class="link">
+                        <a href="/producto.php?id=<?php echo $producto['id']; ?>" class="link">
                             <h3><?php echo $producto['nombre'] ?></h3>
                         </a>
                         <div class="precio_categoria">
